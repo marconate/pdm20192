@@ -24,10 +24,10 @@ public class CurupiraActivity extends AppCompatActivity {
             @Override
             public void onInit(int i) {
                 leitor.setLanguage(new Locale("pt-BR"));
+                tvCurupira = (TextView)findViewById(R.id.tvCurupira);
+                historia = tvCurupira.getText().toString();
+                leitor.speak(historia, TextToSpeech.QUEUE_FLUSH, null);
             }
         });
-        tvCurupira = (TextView)findViewById(R.id.tvCurupira);
-        historia = tvCurupira.getText().toString();
-        leitor.speak(historia, TextToSpeech.QUEUE_FLUSH, null);
     }
 }

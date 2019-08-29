@@ -24,10 +24,10 @@ public class SaciActivity extends AppCompatActivity {
             @Override
             public void onInit(int i) {
                 leitor.setLanguage(new Locale("pt-BR"));
+                tvSaci = (TextView)findViewById(R.id.tvSaci);
+                historia = tvSaci.getText().toString();
+                leitor.speak(historia, TextToSpeech.QUEUE_FLUSH, null);
             }
         });
-        tvSaci = (TextView)findViewById(R.id.tvSaci);
-        historia = tvSaci.getText().toString();
-        leitor.speak(historia, TextToSpeech.QUEUE_FLUSH, null);
     }
 }

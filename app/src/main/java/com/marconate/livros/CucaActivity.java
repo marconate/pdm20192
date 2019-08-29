@@ -24,10 +24,10 @@ public class CucaActivity extends AppCompatActivity {
             @Override
             public void onInit(int i) {
                 leitor.setLanguage(new Locale("pt-BR"));
+                tvCuca = (TextView)findViewById(R.id.tvCuca);
+                historia = tvCuca.getText().toString();
+                leitor.speak(historia, TextToSpeech.QUEUE_FLUSH, null);
             }
         });
-        tvCuca = (TextView)findViewById(R.id.tvCuca);
-        historia = tvCuca.getText().toString();
-        leitor.speak(historia, TextToSpeech.QUEUE_FLUSH, null);
     }
 }

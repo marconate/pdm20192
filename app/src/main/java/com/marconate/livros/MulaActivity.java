@@ -24,10 +24,10 @@ public class MulaActivity extends AppCompatActivity {
             @Override
             public void onInit(int i) {
                 leitor.setLanguage(new Locale("pt-BR"));
+                tvMula = (TextView)findViewById(R.id.tvMula);
+                historia = tvMula.getText().toString();
+                leitor.speak(historia, TextToSpeech.QUEUE_FLUSH, null);
             }
         });
-        tvMula = (TextView)findViewById(R.id.tvMula);
-        historia = tvMula.getText().toString();
-        leitor.speak(historia, TextToSpeech.QUEUE_FLUSH, null);
     }
 }
